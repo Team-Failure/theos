@@ -145,11 +145,11 @@ get_sdks() {
 		update "SDKs appear to already be installed."
 	else
 		update "SDKs do not appear to be installed. Installing now..."
-		$THEOS/bin/install-sdk latest && $THEOS/bin/install-sdk latest-tv
+		$THEOS/bin/install-sdk latest
 		if ! [[ -z $(ls -A "$THEOS/sdks/" | grep sdk) ]]; then
 			update "SDKs successfully installed!"
 		else
-			error "Something appears to have gone wrong. Please try again."
+			error "Something appears to have gone wrong. Please try again. (Note: it is normal you have to re-try a lot of time because the github API is, ..., bad..."
 			exit 8
 		fi
 	fi
